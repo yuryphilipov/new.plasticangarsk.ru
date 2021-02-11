@@ -1,0 +1,90 @@
+header {
+  width: 100%;
+  background: url("../img/top-bg.jpg") center center no-repeat;
+  background-size: cover;
+  color: #fff;
+  box-shadow: 0 2px 24px 0 rgba(0, 0, 0, 0.3); }
+  header a {
+    color: #fff; }
+  header i[class^="fas"] {
+    margin-right: 10px;
+    margin-left: 5px; }
+
+.header-top {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  font-size: 0.8rem; }
+  @media screen and (max-width: 767px) {
+    .header-top {
+      display: none; } }
+
+.header-top__container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0; }
+
+.header-info__phones {
+  position: relative; }
+
+.show-more-phone {
+  cursor: pointer; }
+
+.header-info__more-phone {
+  position: absolute;
+  top: 35px;
+  left: 0;
+  width: 100%;
+  box-sizing: content-box;
+  white-space: nowrap; }
+  .header-info__more-phone a {
+    padding: 10px 30px 10px 32px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 0 2px 24px 0 rgba(0, 0, 0, 0.6); }
+
+.header-info__search {
+  cursor: pointer; }
+
+.header-main__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  padding-top: 10px;
+  padding-bottom: 10px; }
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  margin-left: 20px; }
+
+.header__title {
+  margin: 0 0 0 15px;
+  font-size: 2rem;
+  font-weight: 300; }
+
+.header-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+  @media screen and (max-width: 767px) {
+    .header-menu {
+      display: block; } }
+
+.header-menu__list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 10px; }
+  @media screen and (max-width: 767px) {
+    .header-menu__list {
+      display: block; } }
+
+.header-menu__item {
+  padding: 20px 15px; }
+  .header-menu__item span {
+    padding: 20px 0; }
+  .header-menu__item:hover span {
+    border-bottom: 3px solid #fff; }
