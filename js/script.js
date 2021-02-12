@@ -36,6 +36,9 @@ modalOverlay.addEventListener("click", () => {
   document.querySelectorAll(".fade").forEach(el => {
     el.classList.remove("in");
   });
+  document.querySelectorAll(".open-menu").forEach(el => {
+    el.classList.remove("open-menu");
+  });
 });
 
 modalCloseBtn.addEventListener("click", () => {
