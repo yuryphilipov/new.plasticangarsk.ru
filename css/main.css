@@ -24,6 +24,9 @@ ol {
 a {
   text-decoration: none; }
 
+.no-scroll {
+  overflow: hidden; }
+
 .btn {
   padding: 10px 15px 10px 15px;
   border: 2px solid;

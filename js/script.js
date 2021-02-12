@@ -3,12 +3,14 @@ let morePhone = document.querySelector(".header-info__more-phone");
 let callback = document.querySelector(".header-info__callback");
 let searchBtn = document.querySelector(".search-btn");
 let search = document.querySelector(".search");
-let searchInput = document.querySelector(".search__input");
+let searchInput = document.getElementById("search__input");
 let searchCloseBtn = document.querySelector(".search__close-btn");
 let modalOverlay = document.querySelector(".modal-overlay");
 let modal = document.querySelector(".modal");
 let modalCloseBtn = document.querySelector(".modal__close-btn");
 let scrollUp = document.querySelector(".scroll-up");
+let headerMenu = document.querySelector(".header-menu__nav");
+let burgerBtn = document.querySelector(".header-menu__burger-btn");
 
 window.addEventListener("scroll", () => {
   if (window.pageYOffset > 100) {
@@ -57,4 +59,11 @@ scrollUp.addEventListener("click", () => {
     top: 0,
     behavior: "smooth"
   });
+});
+
+burgerBtn.addEventListener("click", () => {
+  burgerBtn.classList.toggle("open-menu");
+  headerMenu.classList.toggle("open-menu");
+  modalOverlay.classList.toggle("in");
+  document.body.classList.toggle("no-scroll");
 });

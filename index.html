@@ -23,7 +23,7 @@
   <div class="search fade">
     <div class="wrapper">
       <form action="" class="search-form">
-        <input type="text" class="search__input" placeholder="поиск..." />
+        <input type="text" id="search__input" class="search__input" placeholder="поиск..." />
         <span class="search__close-btn close-btn">
           <i class="fas fa-times"></i>
         </span>
@@ -65,21 +65,26 @@
           </div>
         </a>
         <div class="header-menu">
-          <a href="#" class="btn btn-default">Продукция</a>
-          <ul class="header-menu__list nav">
-            <li>
-              <a href="#" class="header-menu__item"><span>О компании</span></a>
-            </li>
-            <li>
-              <a href="#" class="header-menu__item"><span>Услуги</span></a>
-            </li>
-            <li>
-              <a href="#" class="header-menu__item"><span>Прайс</span></a>
-            </li>
-            <li>
-              <a href="#" class="header-menu__item"><span>Контакты</span></a>
-            </li>
-          </ul>
+          <!-- <a href="#" class="btn btn-default">Продукция</a> -->
+          <div class="header-menu__burger-btn">
+            <span></span>
+          </div>
+          <nav class="header-menu__nav nav">
+            <ul class="header-menu__list nav">
+              <li>
+                <a href="#" class="header-menu__item"><span>О компании</span></a>
+              </li>
+              <li>
+                <a href="#" class="header-menu__item"><span>Услуги</span></a>
+              </li>
+              <li>
+                <a href="#" class="header-menu__item"><span>Прайс</span></a>
+              </li>
+              <li>
+                <a href="#" class="header-menu__item"><span>Контакты</span></a>
+              </li>
+            </ul>
+          </nav>
         </div>
       </div>
     </div>
