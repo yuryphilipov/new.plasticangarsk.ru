@@ -7,18 +7,19 @@
 
 .search-form {
   position: relative;
+  margin: 40px 30px;
   .close-btn {
-    top: 20px;
+    top: 0;
     right: 20px;
   }
 }
 
 .search__input {
   width: 90%;
-  height: 100px;
+  height: 48px;
   font-size: 2rem;
-  padding: 15px 50px;
   border: none;
+  border-bottom: 1px solid #ddd;
   &:focus {
     outline: none;
   }

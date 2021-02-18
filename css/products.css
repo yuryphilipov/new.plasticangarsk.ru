@@ -21,8 +21,11 @@
     .product-list {
       grid-template-columns: repeat(1, minmax(230px, 1fr)); } }
 
-a > .product-item:hover {
-  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3); }
+a > .product-item {
+  transition: all 0.2s ease; }
+  a > .product-item:hover {
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
+    transform: scale(1.02); }
 
 .product-item {
   background-color: #fff;

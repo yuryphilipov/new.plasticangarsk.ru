@@ -37,9 +37,10 @@ header {
   cursor: pointer; }
 
 .header-info__more-phone {
+  display: none;
   position: absolute;
   top: 35px;
-  left: 0;
+  left: -1px;
   width: 100%;
   box-sizing: content-box;
   white-space: nowrap; }
@@ -77,7 +78,8 @@ header {
   justify-content: space-between; }
   @media screen and (max-width: 767px) {
     .header-menu__nav {
-      display: block;
+      flex-direction: column;
+      align-items: flex-end;
       position: absolute;
       width: 100%;
       top: 80px;
@@ -124,20 +126,24 @@ header {
 .header-menu__list {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-right: 10px; }
+  justify-content: space-between; }
   @media screen and (max-width: 767px) {
     .header-menu__list {
-      display: block; } }
+      display: block;
+      width: 100%; } }
   @media screen and (max-width: 767px) {
     .header-menu__list li {
-      margin: 20px 20px 20px 0;
-      text-align: right; } }
+      text-align: right;
+      border-bottom: 1px solid #ddd; } }
+  @media screen and (max-width: 767px) {
+    .header-menu__list li:last-child {
+      border-bottom: none; } }
   @media screen and (max-width: 767px) {
     .header-menu__list a {
       color: #666; } }
 
 .header-menu__item {
-  padding: 20px 15px; }
+  display: block;
+  padding: 13px 15px; }
   .header-menu__item span {
     padding: 20px 0; }

@@ -1,0 +1,12 @@
+.scroll-up {
+  position: fixed;
+  bottom: 30px;
+  right: 25px;
+  padding: 7px 10px;
+  border-radius: 50%;
+  background-color: #fff;
+  color: #666;
+  box-shadow: 0 0 11px 1px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 10;
+}

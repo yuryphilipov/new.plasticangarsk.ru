@@ -6,24 +6,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="css/style.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://kit.fontawesome.com/a026198fcd.js" crossorigin="anonymous"></script>
   <title>Пластик</title>
 </head>
 
 <body>
-  <span class="scroll-up">
+  <span class="scroll-up hidden">
     <i class="fas fa-chevron-up"></i>
   </span>
-  <div class="modal-overlay fade"></div>
-  <div class="modal fade">
+  <div class="modal-overlay hidden"></div>
+  <div class="modal hidden">
     <span class="modal__close-btn close-btn">
       <i class="fas fa-times"></i>
     </span>
   </div>
-  <div class="search fade">
+  <div class="search hidden">
     <div class="wrapper">
       <form action="" class="search-form">
-        <input type="text" id="search__input" class="search__input" placeholder="поиск..." />
+        <input type="text" id="search__input" class="search__input" placeholder="Поиск..." />
         <span class="search__close-btn close-btn">
           <i class="fas fa-times"></i>
         </span>
@@ -41,7 +42,7 @@
           <i class="fas fa-phone-alt"></i>
           <a href="tel:+79834050491">8 (983) 40-50-491</a>
           <i class="fas fa-caret-down show-more-phone"></i>
-          <span class="header-info__phones header-info__more-phone hidden">
+          <span class="header-info__phones header-info__more-phone">
             <a href="tel:+793955545122">8 (395) 554-51-22</a>
           </span>
         </span>
@@ -93,49 +94,51 @@
     <div class="product-list wrapper">
       <a href="#">
         <figure class="product-item">
-          <img src="img/products/category-1.jpg" alt="">
+          <img src="img/products/category-1.jpg" alt="" />
           <figcaption class="product-title">Пленка полиэтиленовая</figcaption>
         </figure>
       </a>
       <a href="#">
         <figure class="product-item">
-          <img src="img/products/category-2.jpg" alt="">
+          <img src="img/products/category-2.jpg" alt="" />
           <figcaption class="product-title">Пленка термоусадочная</figcaption>
         </figure>
       </a>
       <a href="#">
         <figure class="product-item">
-          <img src="img/products/category-3.jpg" alt="">
-          <figcaption class="product-title">Пленка полиэтиленовая с печатью</figcaption>
+          <img src="img/products/category-3.jpg" alt="" />
+          <figcaption class="product-title">
+            Пленка полиэтиленовая с печатью
+          </figcaption>
         </figure>
       </a>
       <a href="#">
         <figure class="product-item">
-          <img src="img/products/category-4.jpg" alt="">
+          <img src="img/products/category-4.jpg" alt="" />
           <figcaption class="product-title">Пакеты фасовочные</figcaption>
         </figure>
       </a>
       <a href="#">
         <figure class="product-item">
-          <img src="img/products/category-5.jpg" alt="">
+          <img src="img/products/category-5.jpg" alt="" />
           <figcaption class="product-title">Пакеты Майка</figcaption>
         </figure>
       </a>
       <a href="#">
         <figure class="product-item">
-          <img src="img/products/category-6.jpg" alt="">
+          <img src="img/products/category-6.jpg" alt="" />
           <figcaption class="product-title">Мешки для мусора</figcaption>
         </figure>
       </a>
       <a href="#">
         <figure class="product-item">
-          <img src="img/products/category-7.jpg" alt="">
+          <img src="img/products/category-7.jpg" alt="" />
           <figcaption class="product-title">Ящики</figcaption>
         </figure>
       </a>
       <a href="#">
         <figure class="product-item">
-          <img src="img/products/category-8.jpg" alt="">
+          <img src="img/products/category-8.jpg" alt="" />
           <figcaption class="product-title">Одноразовая посуда</figcaption>
         </figure>
       </a>
