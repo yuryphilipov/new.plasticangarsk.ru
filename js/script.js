@@ -138,4 +138,17 @@ $(document).ready(function() {
     $(".modal").fadeOut(300);
     $(".modal-overlay").fadeOut(300);
   });
+
+  $(".dropdown").hover(function() {
+    if (
+      !$(this)
+        .parent()
+        .parent()
+        .hasClass("open-menu")
+    ) {
+      $(this)
+        .children(".dropdown__submenu")
+        .slideToggle(100);
+    }
+  });
 });

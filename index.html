@@ -25,6 +25,7 @@
     <div class="wrapper">
       <form action="" class="search-form">
         <input type="text" id="search__input" class="search__input" placeholder="Поиск..." />
+        <button class="search__button" type="submit">Найти</button>
         <span class="search__close-btn close-btn">
           <i class="fas fa-times"></i>
         </span>
@@ -70,10 +71,15 @@
           <div class="header-menu__burger-btn">
             <span></span>
           </div>
-          <nav class="header-menu__nav nav">
-            <ul class="header-menu__list nav">
-              <li>
-                <a href="#" class="header-menu__item"><span>О компании</span></a>
+          <nav class="header-menu__nav">
+            <ul class="header-menu__list main-menu">
+              <li class="dropdown">
+                <a href="#" class="header-menu__item dropdown__menu"><span>Компания</span></a>
+                <ul class="dropdown__submenu submenu">
+                  <li><a href="#" class="submenu__item">О компании</a></li>
+                  <li><a href="#" class="submenu__item">Новости компании</a></li>
+                  <li><a href="#" class="submenu__item">Документы</a></li>
+                </ul>
               </li>
               <li>
                 <a href="#" class="header-menu__item"><span>Услуги</span></a>
@@ -81,69 +87,97 @@
               <li>
                 <a href="#" class="header-menu__item"><span>Прайс</span></a>
               </li>
-              <li>
+              <li class="dropdown">
                 <a href="#" class="header-menu__item"><span>Контакты</span></a>
+                <ul class="dropdown__submenu submenu right">
+                  <li><a href="#" class="submenu__item">Головное предприятие</a></li>
+                  <li><a href="#" class="submenu__item">Филиал в г. Ангарске</a></li>
+                  <li><a href="#" class="submenu__item">Филиал в г. Иркутске</a></li>
+                  <li><a href="#" class="submenu__item">Филиал в г. Красноярске</a></li>
+                  <li><a href="#" class="submenu__item">Филиал в г. Улан-Удэ</a></li>
+                </ul>
               </li>
             </ul>
+            <div class="search-mobile mobile">
+              <form action="" class="search-form">
+                <input type="text" class="search__input" placeholder="Поиск..." />
+                <button class="search__button" type="submit">Найти</button>
+              </form>
+            </div>
+            <div class="header-info mobile">
+              <span class="header-info__city-select">
+                <i class="fas fa-map-marker-alt"></i>
+                <a href="#">Ангарск</a>
+              </span>
+              <span class="header-info__email">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:info@plasticangarsk.ru">info@plasticangarsk.ru</a>
+              </span>
+            </div>
           </nav>
         </div>
       </div>
     </div>
   </header>
-  <section class="products">
-    <div class="product-list wrapper">
-      <a href="#">
-        <figure class="product-item">
-          <img src="img/products/category-1.jpg" alt="" />
-          <figcaption class="product-title">Пленка полиэтиленовая</figcaption>
-        </figure>
-      </a>
-      <a href="#">
-        <figure class="product-item">
-          <img src="img/products/category-2.jpg" alt="" />
-          <figcaption class="product-title">Пленка термоусадочная</figcaption>
-        </figure>
-      </a>
-      <a href="#">
-        <figure class="product-item">
-          <img src="img/products/category-3.jpg" alt="" />
-          <figcaption class="product-title">
-            Пленка полиэтиленовая с печатью
-          </figcaption>
-        </figure>
-      </a>
-      <a href="#">
-        <figure class="product-item">
-          <img src="img/products/category-4.jpg" alt="" />
-          <figcaption class="product-title">Пакеты фасовочные</figcaption>
-        </figure>
-      </a>
-      <a href="#">
-        <figure class="product-item">
-          <img src="img/products/category-5.jpg" alt="" />
-          <figcaption class="product-title">Пакеты Майка</figcaption>
-        </figure>
-      </a>
-      <a href="#">
-        <figure class="product-item">
-          <img src="img/products/category-6.jpg" alt="" />
-          <figcaption class="product-title">Мешки для мусора</figcaption>
-        </figure>
-      </a>
-      <a href="#">
-        <figure class="product-item">
-          <img src="img/products/category-7.jpg" alt="" />
-          <figcaption class="product-title">Ящики</figcaption>
-        </figure>
-      </a>
-      <a href="#">
-        <figure class="product-item">
-          <img src="img/products/category-8.jpg" alt="" />
-          <figcaption class="product-title">Одноразовая посуда</figcaption>
-        </figure>
-      </a>
-    </div>
-  </section>
+  <div class="main-content">
+    <section class="products">
+      <div class="product-list wrapper">
+        <a href="#">
+          <figure class="product-item">
+            <img src="img/products/category-1.jpg" alt="" />
+            <figcaption class="product-title">Пленка полиэтиленовая</figcaption>
+          </figure>
+        </a>
+        <a href="#">
+          <figure class="product-item">
+            <img src="img/products/category-2.jpg" alt="" />
+            <figcaption class="product-title">Пленка термоусадочная</figcaption>
+          </figure>
+        </a>
+        <a href="#">
+          <figure class="product-item">
+            <img src="img/products/category-3.jpg" alt="" />
+            <figcaption class="product-title">
+              Пленка полиэтиленовая с печатью
+            </figcaption>
+          </figure>
+        </a>
+        <a href="#">
+          <figure class="product-item">
+            <img src="img/products/category-4.jpg" alt="" />
+            <figcaption class="product-title">Пакеты фасовочные</figcaption>
+          </figure>
+        </a>
+        <a href="#">
+          <figure class="product-item">
+            <img src="img/products/category-5.jpg" alt="" />
+            <figcaption class="product-title">Пакеты Майка</figcaption>
+          </figure>
+        </a>
+        <a href="#">
+          <figure class="product-item">
+            <img src="img/products/category-6.jpg" alt="" />
+            <figcaption class="product-title">Мешки для мусора</figcaption>
+          </figure>
+        </a>
+        <a href="#">
+          <figure class="product-item">
+            <img src="img/products/category-7.jpg" alt="" />
+            <figcaption class="product-title">Ящики</figcaption>
+          </figure>
+        </a>
+        <a href="#">
+          <figure class="product-item">
+            <img src="img/products/category-8.jpg" alt="" />
+            <figcaption class="product-title">Одноразовая посуда</figcaption>
+          </figure>
+        </a>
+      </div>
+    </section>
+  </div>
+  <footer>
+
+  </footer>
   <script src="js/script.js"></script>
 </body>
 

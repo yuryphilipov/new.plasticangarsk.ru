@@ -4,8 +4,15 @@ html {
 }
 
 body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   font-family: Roboto, sans-serif;
   background-color: #f6f6f6;
+}
+
+.main-content {
+  flex: 1 0 auto;
 }
 
 section {
@@ -53,6 +60,10 @@ a {
   display: none;
 }
 
+.right {
+  right: 0;
+}
+
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -82,4 +93,12 @@ a {
   font-size: 1.5rem;
   color: #666;
   cursor: pointer;
+}
+
+.mobile {
+  display: none;
+
+  @media screen and (max-width: 767px) {
+    display: block;
+  }
 }
