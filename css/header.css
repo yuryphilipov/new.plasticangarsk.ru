@@ -80,14 +80,17 @@ header {
   @media screen and (max-width: 767px) {
     .header-menu__nav {
       flex-direction: column;
+      justify-content: flex-start;
       align-items: flex-end;
       position: absolute;
       width: 100%;
+      height: 100vh;
       top: 80px;
       right: -100%;
       background: #fff;
       transition: 0.3s;
-      color: #666; }
+      color: #666;
+      overflow-y: auto; }
       .header-menu__nav a {
         color: #666; }
       .header-menu__nav.open-menu {
@@ -100,29 +103,6 @@ header {
   width: 40px;
   display: none;
   cursor: pointer; }
-  .header-menu__burger-btn span, .header-menu__burger-btn:before, .header-menu__burger-btn:after {
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    margin: 0 auto;
-    background-color: #fff; }
-  .header-menu__burger-btn:before, .header-menu__burger-btn:after {
-    content: ""; }
-  .header-menu__burger-btn:before {
-    top: -8px; }
-  .header-menu__burger-btn:after {
-    top: 8px; }
-  .header-menu__burger-btn.open-menu span {
-    opacity: 0;
-    transition: 0.3s; }
-  .header-menu__burger-btn.open-menu:before {
-    transform: rotate(38deg);
-    top: 0;
-    transition: 0.3s; }
-  .header-menu__burger-btn.open-menu:after {
-    transform: rotate(-38deg);
-    top: 0;
-    transition: 0.3s; }
   @media screen and (max-width: 767px) {
     .header-menu__burger-btn {
       display: block; } }

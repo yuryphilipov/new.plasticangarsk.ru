@@ -100,6 +100,8 @@ $(document).ready(function() {
     $(".modal").fadeOut(300);
     $(".header-menu__nav").removeClass("open-menu");
     $(".header-menu__burger-btn").removeClass("open-menu");
+    $(".burger-btn-open").removeClass("hidden");
+    $(".burger-btn-close").addClass("hidden");
     $("body").removeClass("no-scroll");
   });
 
@@ -124,9 +126,13 @@ $(document).ready(function() {
     } else {
       $(".modal-overlay").fadeIn(300);
     }
+
+    $(".burger-btn-open").toggleClass("hidden");
+    $(".burger-btn-close").toggleClass("hidden");
     $(this).toggleClass("open-menu");
     $(".header-menu__nav").toggleClass("open-menu");
     $("body").toggleClass("no-scroll");
+    $(".search__input").focus();
   });
 
   $(".header-info__callback").click(function() {
