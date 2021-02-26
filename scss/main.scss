@@ -39,6 +39,8 @@ a {
   padding: 10px 15px 10px 15px;
   border: 2px solid;
   border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
 }
 
 .btn-default {
@@ -48,7 +50,7 @@ a {
 }
 
 .dashed {
-  border-bottom: 1px dashed #fff;
+  border-bottom: 1px dashed;
 }
 
 .wrapper {
@@ -100,5 +102,14 @@ a {
 
   @media screen and (max-width: 767px) {
     display: block;
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

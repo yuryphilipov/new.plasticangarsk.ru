@@ -1,77 +1,3 @@
-// let showMorePhone = document.querySelector(".show-more-phone");
-// let morePhone = document.querySelector(".header-info__more-phone");
-// let callback = document.querySelector(".header-info__callback");
-// let searchBtn = document.querySelector(".search-btn");
-// let search = document.querySelector(".search");
-// let searchInput = document.getElementById("search__input");
-// let searchCloseBtn = document.querySelector(".search__close-btn");
-// let modalOverlay = document.querySelector(".modal-overlay");
-// let modal = document.querySelector(".modal");
-// let modalCloseBtn = document.querySelector(".modal__close-btn");
-// let scrollUp = document.querySelector(".scroll-up");
-// let headerMenu = document.querySelector(".header-menu__nav");
-// let burgerBtn = document.querySelector(".header-menu__burger-btn");
-
-// window.addEventListener("scroll", () => {
-//   if (window.pageYOffset > 100) {
-//     scrollUp.style.visibility = "visible";
-//     scrollUp.style.opacity = "1";
-//   } else {
-//     scrollUp.style.visibility = "hidden";
-//     scrollUp.style.opacity = "0";
-//   }
-// });
-
-// showMorePhone.addEventListener("click", () => {
-//   morePhone.classList.toggle("hidden");
-// });
-
-// callback.addEventListener("click", () => {
-//   modalOverlay.classList.add("in");
-//   modal.classList.add("active", "in");
-// });
-
-// modalOverlay.addEventListener("click", () => {
-//   modalOverlay.classList.remove("in");
-//   document.body.classList.remove("no-scroll");
-//   document.querySelectorAll(".fade").forEach(el => {
-//     el.classList.remove("in");
-//   });
-//   document.querySelectorAll(".open-menu").forEach(el => {
-//     el.classList.remove("open-menu");
-//   });
-// });
-
-// modalCloseBtn.addEventListener("click", () => {
-//   modalOverlay.classList.remove("in");
-//   modal.classList.remove("active", "in");
-// });
-
-// searchBtn.addEventListener("click", () => {
-//   modalOverlay.classList.add("in");
-//   search.classList.add("in");
-//   searchInput.focus();
-// });
-
-// searchCloseBtn.addEventListener("click", () => {
-//   modalOverlay.classList.remove("in");
-//   search.classList.remove("in");
-// });
-
-// scrollUp.addEventListener("click", () => {
-//   window.scrollTo({
-//     top: 0,
-//     behavior: "smooth"
-//   });
-// });
-
-// burgerBtn.addEventListener("click", () => {
-//   burgerBtn.classList.toggle("open-menu");
-//   headerMenu.classList.toggle("open-menu");
-//   modalOverlay.classList.toggle("in");
-//   document.body.classList.toggle("no-scroll");
-// });
-
 $(document).ready(function() {
   $(window).on("scroll", function() {
     if (window.pageYOffset > 100) {
@@ -92,6 +18,7 @@ $(document).ready(function() {
     $(".modal-overlay").fadeIn(300);
     $(".search").fadeIn(300);
     $(".search__input").focus();
+    $("body").addClass("no-scroll");
   });
 
   $(".modal-overlay").click(function() {
@@ -108,6 +35,7 @@ $(document).ready(function() {
   $(".search__close-btn").click(function() {
     $(".search").fadeOut(300);
     $(".modal-overlay").fadeOut(300);
+    $("body").removeClass("no-scroll");
   });
 
   $(".show-more-phone").click(function() {
@@ -121,15 +49,15 @@ $(document).ready(function() {
   });
 
   $(".header-menu__burger-btn").click(function() {
-    if ($(this).hasClass("open-menu")) {
-      $(".modal-overlay").fadeOut(300);
-    } else {
-      $(".modal-overlay").fadeIn(300);
-    }
+    // if ($(this).hasClass("open-menu")) {
+    //   $(".modal-overlay").fadeOut(300);
+    // } else {
+    //   $(".modal-overlay").fadeIn(300);
+    // }
 
+    $(this).toggleClass("open-menu");
     $(".burger-btn-open").toggleClass("hidden");
     $(".burger-btn-close").toggleClass("hidden");
-    $(this).toggleClass("open-menu");
     $(".header-menu__nav").toggleClass("open-menu");
     $("body").toggleClass("no-scroll");
     $(".search__input").focus();
@@ -138,11 +66,15 @@ $(document).ready(function() {
   $(".header-info__callback").click(function() {
     $(".modal").fadeIn(300);
     $(".modal-overlay").fadeIn(300);
+    $("body").addClass("no-scroll");
   });
 
   $(".modal__close-btn").click(function() {
     $(".modal").fadeOut(300);
     $(".modal-overlay").fadeOut(300);
+    if (!$(".header-menu__nav").hasClass("open-menu")) {
+      $("body").removeClass("no-scroll");
+    }
   });
 
   $(".dropdown").hover(function() {
@@ -156,5 +88,31 @@ $(document).ready(function() {
         .children(".dropdown__submenu")
         .slideToggle(100);
     }
+  });
+
+  $(".dropdown").click(function() {
+    $(this)
+      .children(".dropdown__submenu")
+      .slideToggle(100);
+    $(this)
+      .children(".dropdown__expand")
+      .children()
+      .toggleClass("fa-chevron-up")
+      .toggleClass("fa-chevron-down");
+  });
+
+  $(".search__input").on("input", function() {
+    if ($(this).val().length > 0) {
+      $(".search__clear-btn").css({ display: "inline-block" });
+    } else {
+      $(".search__clear-btn").css({ display: "none" });
+    }
+  });
+
+  $(".search__clear-btn").click(function() {
+    $(".search__input")
+      .val("")
+      .focus();
+    $(".search__clear-btn").css({ display: "none" });
   });
 });

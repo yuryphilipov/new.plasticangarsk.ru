@@ -31,7 +31,9 @@ a {
 .btn {
   padding: 10px 15px 10px 15px;
   border: 2px solid;
-  border-radius: 5px; }
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer; }
 
 .btn-default {
   color: #fff;
@@ -39,7 +41,7 @@ a {
   border-color: #1976d2; }
 
 .dashed {
-  border-bottom: 1px dashed #fff; }
+  border-bottom: 1px dashed; }
 
 .wrapper {
   max-width: 1360px;
@@ -83,3 +85,9 @@ a {
   @media screen and (max-width: 767px) {
     .mobile {
       display: block; } }
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }

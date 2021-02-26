@@ -22,17 +22,27 @@
       <span class="modal__close-btn close-btn">
         <i class="fas fa-times"></i>
       </span>
+      <div class="modal__header">Заказ обратного звонка</div>
+      <div class="modal__content"></div>
+      <div class="modal__footer"></div>
     </div>
     <div class="search hidden">
       <div class="wrapper">
-        <form action="" class="search-form">
-          <input
-            type="text"
-            id="search__input"
-            class="search__input"
-            placeholder="Поиск..."
-          />
-          <button class="search__button" type="submit">Найти</button>
+        <form action="" class="search__form">
+          <div class="search__field">
+            <input
+              type="text"
+              id="search__input"
+              class="search__input"
+              placeholder="Поиск..."
+            />
+            <span class="search__clear-btn">
+              <i class="fas fa-times"></i>
+            </span>
+          </div>
+          <button class="search__button btn btn-default" type="submit">
+            Найти
+          </button>
           <span class="search__close-btn close-btn">
             <i class="fas fa-times"></i>
           </span>
@@ -74,7 +84,6 @@
             </div>
           </a>
           <div class="header-menu">
-            <!-- <a href="#" class="btn btn-default">Продукция</a> -->
             <div class="header-menu__burger-btn">
               <svg
                 class="burger-btn-open"
@@ -116,6 +125,25 @@
               </svg>
             </div>
             <nav class="header-menu__nav">
+              <div class="mobile-search mobile">
+                <form action="" class="mobile-search__form">
+                  <div class="search__field">
+                    <input
+                      type="text"
+                      id="mobile-search__input"
+                      class="search__input"
+                      placeholder="Поиск..."
+                    />
+                    <span class="search__clear-btn">
+                      <i class="fas fa-times"></i>
+                    </span>
+                  </div>
+                  <button class="search__button btn btn-default" type="submit">
+                    Найти
+                  </button>
+                </form>
+              </div>
+              <div class="product-btn"><a href="#">Продукция</a></div>
               <ul class="header-menu__list main-menu">
                 <li class="dropdown">
                   <a href="#" class="header-menu__item dropdown__menu"
@@ -128,6 +156,9 @@
                     </li>
                     <li><a href="#" class="submenu__item">Документы</a></li>
                   </ul>
+                  <span class="dropdown__expand"
+                    ><i class="fas fa-chevron-down"></i
+                  ></span>
                 </li>
                 <li>
                   <a href="#" class="header-menu__item"><span>Услуги</span></a>
@@ -158,19 +189,12 @@
                       <a href="#" class="submenu__item">Филиал в г. Улан-Удэ</a>
                     </li>
                   </ul>
+                  <span class="dropdown__expand"
+                    ><i class="fas fa-chevron-down"></i
+                  ></span>
                 </li>
               </ul>
-              <div class="search-mobile mobile">
-                <form action="" class="search-form">
-                  <input
-                    type="text"
-                    class="search__input"
-                    placeholder="Поиск..."
-                  />
-                  <button class="search__button" type="submit">Найти</button>
-                </form>
-              </div>
-              <div class="header-info mobile">
+              <div class="header-info header-info-mobile mobile">
                 <span class="header-info__city-select">
                   <i class="fas fa-map-marker-alt"></i>
                   <a href="#">Ангарск</a>
@@ -181,6 +205,22 @@
                     >info@plasticangarsk.ru</a
                   >
                 </span>
+                <span class="header-info__phones">
+                  <i class="fas fa-phone-alt"></i>
+                  <a href="tel:+79834050491">8 (983) 40-50-491</a>
+                </span>
+                <span class="header-info__phones">
+                  <i class="fas fa-phone-alt"></i>
+                  <a href="tel:+793955545122">8 (395) 554-51-22</a>
+                </span>
+                <span
+                  ><button
+                    class="header-info__callback btn btn-default"
+                    href="#"
+                  >
+                    Заказать звонок
+                  </button></span
+                >
               </div>
             </nav>
           </div>

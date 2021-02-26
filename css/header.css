@@ -8,7 +8,7 @@ header {
   header a {
     color: #fff; }
   header i[class^="fas"] {
-    margin-right: 10px;
+    margin-right: 5px;
     margin-left: 5px; }
   @media screen and (max-width: 767px) {
     header {
@@ -54,6 +54,19 @@ header {
 
 .header-info__search {
   cursor: pointer; }
+
+.header-info-mobile,
+.mobile-search {
+  width: 100%;
+  padding: 15px 10px; }
+
+@media screen and (max-width: 767px) {
+  .header-info-mobile {
+    display: flex;
+    flex-direction: column; } }
+
+.header-info-mobile span {
+  margin: 10px 0; }
 
 .header-main__container {
   display: flex;
@@ -114,9 +127,9 @@ header {
   @media screen and (max-width: 767px) {
     .header-menu__list {
       display: block;
-      width: 100%; } }
-  .header-menu__list li:hover span {
-    color: #ddd; }
+      width: 100%;
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd; } }
   @media screen and (max-width: 767px) {
     .header-menu__list li {
       border-bottom: 1px solid #ddd; } }
@@ -142,18 +155,38 @@ header {
   background-color: #fff;
   padding-bottom: 5px;
   box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.3); }
+  @media screen and (max-width: 767px) {
+    .dropdown__submenu {
+      position: relative;
+      box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 15px -10px inset, rgba(0, 0, 0, 0.2) 0px -5px 15px -10px inset;
+      padding: 5px 15px; } }
 
 .dropdown:hover .dropdown-menu__submenu {
   display: block; }
+
+@media screen and (max-width: 767px) {
+  .dropdown {
+    position: relative; } }
+
+.dropdown__expand {
+  display: none; }
+  @media screen and (max-width: 767px) {
+    .dropdown__expand {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 18px;
+      line-height: 50px; } }
 
 .submenu__item {
   padding: 8px 10px;
   color: #666;
   display: block; }
 
-@media screen and (max-width: 767px) {
-  .mobile {
+.product-btn {
+  width: 100%;
+  background-color: #1976d2; }
+  .product-btn a {
     display: block;
-    width: 100%;
-    border-top: 1px solid #ddd;
-    padding: 15px 10px; } }
+    color: #fff;
+    padding: 15px; }
