@@ -23,8 +23,8 @@ function _createModal(options) {
           <p>${options.content || ""}</p>
         </div>
         <div class="modal-footer">
-          <button>OK</button>
-          <button>Cancel</button>
+          <button class='btn btn-primary'>OK</button>
+          <button class='btn btn-danger'>Cancel</button>
         </div>
       </div>
     </div>

@@ -23,10 +23,12 @@ $(document).ready(function() {
     $("body").addClass("no-scroll");
   });
 
-  // Закрытие блока поиска
-  $(".search__close-btn").click(function() {
-    $(".search").fadeOut(300);
-    $("body").removeClass("no-scroll");
+  // Закрытие поиска по клику на элемент с атрибутом "data-close"
+  $(".search").click(function(event) {
+    if (event.target.dataset.close) {
+      $(".search").fadeOut(300);
+      $("body").removeClass("no-scroll");
+    }
   });
 
   // Появление кнопки очистки в строке поиска
@@ -109,7 +111,7 @@ $(document).ready(function() {
       .toggleClass("fa-chevron-down");
   });
 
-  // Создание модальных окон: "Вызов обратного звонка", "Выбор города"
+  // Создание модальных окон: "Вызов обратного звонка", "Выбор города". Функция modal берется из plugins/modal/index.js
   const modalCallback = modal({
     title: "Вызов обратного звонка",
     closable: true,

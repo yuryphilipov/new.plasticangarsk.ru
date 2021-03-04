@@ -21,6 +21,11 @@
 
 .search__container {
   background-color: #fff;
+}
+
+.search__row {
+  max-width: 1380px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   padding: 0 30px;

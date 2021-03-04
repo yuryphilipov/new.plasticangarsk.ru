@@ -30,15 +30,21 @@ a {
 
 .btn {
   padding: 10px 15px 10px 15px;
-  border: 2px solid;
+  border: 1px solid;
   border-radius: 5px;
   text-align: center;
   cursor: pointer; }
 
-.btn-default {
+.btn-default,
+.btn-primary {
   color: #fff;
   background-color: #1976d2;
   border-color: #1976d2; }
+
+.btn-danger {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545; }
 
 .dashed {
   border-bottom: 1px dashed; }
