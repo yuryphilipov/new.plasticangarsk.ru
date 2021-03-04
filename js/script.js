@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  // Отображение/скрытие кнокпи "Вверх"
   $(window).on("scroll", function() {
     if (window.pageYOffset > 100) {
       $(".scroll-up").fadeIn(500);
@@ -7,6 +8,7 @@ $(document).ready(function() {
     }
   });
 
+  // Скроллинг наверх по клику на кнопку
   $(".scroll-up").click(function() {
     window.scrollTo({
       top: 0,
@@ -14,30 +16,37 @@ $(document).ready(function() {
     });
   });
 
+  // Отображение блока поиска по сайту
   $(".search-btn").click(function() {
-    $(".modal-overlay").fadeIn(300);
     $(".search").fadeIn(300);
     $(".search__input").focus();
     $("body").addClass("no-scroll");
   });
 
-  $(".modal-overlay").click(function() {
-    $(this).fadeOut(300);
-    $(".search").fadeOut(300);
-    $(".modal").fadeOut(300);
-    $(".header-menu__nav").removeClass("open-menu");
-    $(".header-menu__burger-btn").removeClass("open-menu");
-    $(".burger-btn-open").removeClass("hidden");
-    $(".burger-btn-close").addClass("hidden");
-    $("body").removeClass("no-scroll");
-  });
-
+  // Закрытие блока поиска
   $(".search__close-btn").click(function() {
     $(".search").fadeOut(300);
-    $(".modal-overlay").fadeOut(300);
     $("body").removeClass("no-scroll");
   });
 
+  // Появление кнопки очистки в строке поиска
+  $(".search__input").on("input", function() {
+    if ($(this).val().length > 0) {
+      $(".search__clear-btn").css({ display: "inline-block" });
+    } else {
+      $(".search__clear-btn").css({ display: "none" });
+    }
+  });
+
+  // Очистка строки поиска по кнопке
+  $(".search__clear-btn").click(function() {
+    $(".search__input")
+      .val("")
+      .focus();
+    $(".search__clear-btn").css({ display: "none" });
+  });
+
+  // Отображение/скрытие второго телефона
   $(".show-more-phone").click(function() {
     if ($(".header-info__more-phone").css("display") == "none") {
       $(".header-info__more-phone").fadeIn(300);
@@ -48,13 +57,8 @@ $(document).ready(function() {
     $(this).toggleClass("fa-caret-up");
   });
 
+  // Отображение/скрытие главного меню в мобильной версии сайта
   $(".header-menu__burger-btn").click(function() {
-    // if ($(this).hasClass("open-menu")) {
-    //   $(".modal-overlay").fadeOut(300);
-    // } else {
-    //   $(".modal-overlay").fadeIn(300);
-    // }
-
     $(this).toggleClass("open-menu");
     $(".burger-btn-open").toggleClass("hidden");
     $(".burger-btn-close").toggleClass("hidden");
@@ -63,20 +67,23 @@ $(document).ready(function() {
     $(".search__input").focus();
   });
 
-  $(".header-info__callback").click(function() {
-    $(".modal").fadeIn(300);
-    $(".modal-overlay").fadeIn(300);
-    $("body").addClass("no-scroll");
-  });
-
-  $(".modal__close-btn").click(function() {
-    $(".modal").fadeOut(300);
-    $(".modal-overlay").fadeOut(300);
-    if (!$(".header-menu__nav").hasClass("open-menu")) {
-      $("body").removeClass("no-scroll");
+  // Появление/скрытие меню с продукцией при наведении на кнопку "Продукция"
+  $(".product-btn").hover(function() {
+    if (
+      !$(this)
+        .parent()
+        .hasClass("open-menu")
+    ) {
+      $(".products").slideToggle(300);
     }
   });
 
+  // Появление/скрытие меню с продукцией при клике на кнопку "Продукция" в мобильной версии сайта
+  $(".product-btn").click(function() {
+    $(".products").slideDown(100);
+  });
+
+  // Появление/скрытие подменю пунктов главного меню при наведении
   $(".dropdown").hover(function() {
     if (
       !$(this)
@@ -90,6 +97,7 @@ $(document).ready(function() {
     }
   });
 
+  // Появление/скрытие подменю пунктов главного меню при клике в мобильной версии сайта
   $(".dropdown").click(function() {
     $(this)
       .children(".dropdown__submenu")
@@ -101,18 +109,27 @@ $(document).ready(function() {
       .toggleClass("fa-chevron-down");
   });
 
-  $(".search__input").on("input", function() {
-    if ($(this).val().length > 0) {
-      $(".search__clear-btn").css({ display: "inline-block" });
-    } else {
-      $(".search__clear-btn").css({ display: "none" });
-    }
+  // Создание модальных окон: "Вызов обратного звонка", "Выбор города"
+  const modalCallback = modal({
+    title: "Вызов обратного звонка",
+    closable: true,
+    content: `<p></p>`,
+    buttons: [{ text: "Ok", type: "" }, { text: "Cancel", type: "" }]
   });
 
-  $(".search__clear-btn").click(function() {
-    $(".search__input")
-      .val("")
-      .focus();
-    $(".search__clear-btn").css({ display: "none" });
+  const modalCity = modal({
+    title: "Выберите город",
+    closable: true,
+    content: `<p></p>`
+  });
+
+  // Отображение модального окна "Вызов обратного звонка"
+  $(".header-info__callback").click(function() {
+    modalCallback.open();
+  });
+
+  // Отображение модального окна "Выбор города"
+  $(".header-info__city-select").click(function() {
+    modalCity.open();
   });
 });

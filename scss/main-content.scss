@@ -1,0 +1,18 @@
+.main-content {
+  @media screen and (max-width: 767px) {
+    margin-top: 80px;
+  }
+}
+
+.about {
+}
+
+.about-title {
+}
+
+.about-text {
+  margin: 0 20px;
+  p {
+    line-height: 1.5rem;
+  }
+}

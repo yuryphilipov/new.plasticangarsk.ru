@@ -58,7 +58,7 @@ header {
 .header-info-mobile,
 .mobile-search {
   width: 100%;
-  padding: 15px 10px; }
+  padding: 15px 20px; }
 
 @media screen and (max-width: 767px) {
   .header-info-mobile {
@@ -111,7 +111,6 @@ header {
         right: 0; } }
 
 .header-menu__burger-btn {
-  position: relative;
   margin-right: 20px;
   width: 40px;
   display: none;
@@ -144,17 +143,18 @@ header {
     padding: 20px 0; }
   @media screen and (max-width: 767px) {
     .header-menu__item {
-      padding: 15px; } }
+      padding: 15px 24px; } }
 
 .main-menu {
   position: relative; }
 
+.submenu {
+  background-color: #fff;
+  box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.3); }
+
 .dropdown__submenu {
   display: none;
-  position: absolute;
-  background-color: #fff;
-  padding-bottom: 5px;
-  box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.3); }
+  position: absolute; }
   @media screen and (max-width: 767px) {
     .dropdown__submenu {
       position: relative;
@@ -176,17 +176,12 @@ header {
       position: absolute;
       top: 0;
       right: 18px;
-      line-height: 50px; } }
+      line-height: 50px;
+      cursor: pointer; } }
 
 .submenu__item {
   padding: 8px 10px;
   color: #666;
   display: block; }
-
-.product-btn {
-  width: 100%;
-  background-color: #1976d2; }
-  .product-btn a {
-    display: block;
-    color: #fff;
-    padding: 15px; }
+  .submenu__item:hover {
+    background-color: #ddd; }
