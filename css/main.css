@@ -31,11 +31,18 @@ a {
 .btn {
   padding: 10px 15px 10px 15px;
   border: 1px solid;
-  border-radius: 5px;
+  border-radius: 0.25rem;
   text-align: center;
+  vertical-align: middle;
   cursor: pointer; }
+  .btn:focus {
+    outline: none; }
 
-.btn-default,
+.btn-default {
+  color: #000;
+  background-color: #ccc;
+  border-color: #ccc; }
+
 .btn-primary {
   color: #fff;
   background-color: #1976d2;

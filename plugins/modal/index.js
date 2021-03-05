@@ -1,9 +1,29 @@
-function _createModal(options) {
-  function addFooter() {
-    const footer = document.createElement("div");
-    footer.classList.add("modal-footer");
+Element.prototype.appendAfter = function(element) {
+  element.parentNode.insertBefore(this, element.nextSibling);
+};
+
+const noop = () => {};
+
+function _createFooter(buttons = []) {
+  const footer = document.createElement("div");
+  footer.classList.add("modal-footer");
+
+  if (buttons.length > 0) {
+    buttons.forEach(btn => {
+      let $btn = document.createElement("button");
+      $btn.textContent = btn.text;
+      $btn.classList.add("btn");
+      $btn.classList.add(`btn-${btn.type || "default"}`);
+      $btn.onclick = btn.handler || noop;
+      if (btn.isClose) $btn.dataset.close = "true";
+      footer.appendChild($btn);
+    });
   }
 
+  return footer;
+}
+
+function _createModal(options) {
   const modal = document.createElement("div");
   modal.classList.add("modal");
   modal.insertAdjacentHTML(
@@ -19,17 +39,17 @@ function _createModal(options) {
               : ""
           }
         </div>
-        <div class="modal-content">
+        <div class="modal-content" data-content>
           <p>${options.content || ""}</p>
-        </div>
-        <div class="modal-footer">
-          <button class='btn btn-primary'>OK</button>
-          <button class='btn btn-danger'>Cancel</button>
         </div>
       </div>
     </div>
   `
   );
+
+  const $footer = _createFooter(options.buttons);
+  $footer.appendAfter(modal.querySelector("[data-content]"));
+
   document.body.appendChild(modal);
   return modal;
 }

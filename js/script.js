@@ -116,22 +116,45 @@ $(document).ready(function() {
     title: "Вызов обратного звонка",
     closable: true,
     content: `<p></p>`,
-    buttons: [{ text: "Ok", type: "" }, { text: "Cancel", type: "" }]
+    buttons: [
+      {
+        text: "Ok",
+        type: "primary",
+        isClose: false,
+        handler() {}
+      },
+      {
+        text: "Cancel",
+        type: "danger",
+        isClose: true,
+        handler() {}
+      }
+    ]
   });
 
   const modalCity = modal({
     title: "Выберите город",
     closable: true,
-    content: `<p></p>`
+    content: `<p></p>`,
+    buttons: [
+      {
+        text: "Ok",
+        type: "primary",
+        isClose: true,
+        handler() {}
+      }
+    ]
   });
 
   // Отображение модального окна "Вызов обратного звонка"
-  $(".header-info__callback").click(function() {
+  $(".header-info__callback").click(function(event) {
+    event.preventDefault();
     modalCallback.open();
   });
 
   // Отображение модального окна "Выбор города"
-  $(".header-info__city-select").click(function() {
+  $(".header-info__city-select").click(function(event) {
+    event.preventDefault();
     modalCity.open();
   });
 });
