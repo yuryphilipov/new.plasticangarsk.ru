@@ -1,16 +1,27 @@
-const gulp = require("gulp");
+const { src, dest, watch, parallel } = require("gulp");
 const css = require("gulp-sass");
-//var watch = require("gulp-watch");
+const fileinclude = require("gulp-file-include");
 
 function sass() {
-  return gulp
-    .src("scss/**/*.scss")
+  return src("scss/**/*.scss")
     .pipe(css())
-    .pipe(gulp.dest("css"));
+    .pipe(dest("css"));
 }
 
-function watch() {
-  gulp.watch("scss/**/*.scss", sass);
+function include() {
+  return src(["./html/index.html"])
+    .pipe(
+      fileinclude({
+        prefix: "@@",
+        basepath: "@file"
+      })
+    )
+    .pipe(dest("./"));
 }
 
-exports.default = watch;
+function _watch() {
+  watch("scss/**/*.scss", sass);
+}
+
+exports.watch = _watch;
+exports.include = include;

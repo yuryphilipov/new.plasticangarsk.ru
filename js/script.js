@@ -69,6 +69,15 @@ $(document).ready(function() {
     $(".search__input").focus();
   });
 
+  $(".close-menu").click(function() {
+    $(this).toggleClass("open-menu");
+    $(".burger-btn-open").toggleClass("hidden");
+    $(".burger-btn-close").toggleClass("hidden");
+    $(".header-menu__nav").toggleClass("open-menu");
+    $("body").toggleClass("no-scroll");
+    $(".search__input").focus();
+  });
+
   // Появление/скрытие меню с продукцией при наведении на кнопку "Продукция"
   $(".product-btn").hover(function() {
     if (
