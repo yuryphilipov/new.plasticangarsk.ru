@@ -1,13 +1,8 @@
 .main-content {
+  flex: 1 0 auto;
   @media screen and (max-width: 767px) {
     margin-top: 80px;
   }
-}
-
-.about {
-}
-
-.about-title {
 }
 
 .about-text {

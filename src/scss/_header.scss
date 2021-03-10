@@ -88,9 +88,11 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 80px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+
+  @media screen and (max-width: 767px) {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
 }
 
 .header__logo {
@@ -259,4 +261,8 @@ header {
       background-color: #ddd;
     }
   }
+}
+
+.close-menu {
+  cursor: pointer;
 }

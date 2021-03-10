@@ -1,32 +1,40 @@
+// Цвета
+$grey: #ccc;
+$blue: #1976d2;
+$red: #dc3545;
+
 html {
   height: 100%;
-  width: 100%; }
+  width: 100%;
+}
 
 body {
   height: 100%;
   display: flex;
   flex-direction: column;
   font-family: Roboto, sans-serif;
-  background-color: #f6f6f6; }
-
-.main-content {
-  flex: 1 0 auto; }
+  background-color: #f6f6f6;
+}
 
 section {
   margin-top: 40px;
-  margin-bottom: 30px; }
+  margin-bottom: 30px;
+}
 
 ul,
 ol {
   list-style-type: none;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+}
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 .no-scroll {
-  overflow: hidden; }
+  overflow: hidden;
+}
 
 .btn {
   padding: 10px 15px 10px 15px;
@@ -34,49 +42,62 @@ a {
   border-radius: 0.25rem;
   text-align: center;
   vertical-align: middle;
-  cursor: pointer; }
-  .btn:focus {
-    outline: none; }
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+}
 
 .btn-default {
   color: #000;
-  background-color: #ccc;
-  border-color: #ccc; }
+  background-color: $grey;
+  border-color: $grey;
+}
 
 .btn-primary {
   color: #fff;
-  background-color: #1976d2;
-  border-color: #1976d2; }
+  background-color: $blue;
+  border-color: $blue;
+}
 
 .btn-danger {
   color: #fff;
-  background-color: #dc3545;
-  border-color: #dc3545; }
+  background-color: $red;
+  border-color: $red;
+}
 
 .dashed {
-  border-bottom: 1px dashed; }
+  border-bottom: 1px dashed;
+}
 
 .wrapper {
   max-width: 1360px;
-  margin: 0 auto; }
+  margin: 0 auto;
+}
 
 .title {
-  margin: 0 0 15px 30px; }
+  margin: 0 0 15px 30px;
+}
 
 .hidden {
-  display: none; }
+  display: none;
+}
 
 .right {
-  right: 0; }
+  right: 0;
+}
 
 .fade {
   visibility: hidden;
   opacity: 0;
-  transition: all 0.3s ease-out; }
+  transition: all 0.3s ease-out;
+}
 
 .fade.in {
   visibility: visible;
-  opacity: 1; }
+  opacity: 1;
+}
 
 .close-btn {
   position: absolute;
@@ -85,16 +106,22 @@ a {
   padding: 10px 15px;
   font-size: 1.5rem;
   color: #666;
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 .mobile {
-  display: none; }
+  display: none;
+
   @media screen and (max-width: 767px) {
-    .mobile {
-      display: block; } }
+    display: block;
+  }
+}
 
 @keyframes rotation {
   0% {
-    transform: rotate(0deg); }
+    transform: rotate(0deg);
+  }
   100% {
-    transform: rotate(360deg); } }
+    transform: rotate(360deg);
+  }
+}
